@@ -49,3 +49,19 @@ COMMIT;
 BEGIN;
 DELETE FROM animals;
 ROLLBACK;
+
+Inside a transaction:
+
+    -- Delete all animals born after Jan 1st, 2022.
+    -- Create a savepoint for the transaction.
+    -- Update all animals' weight to be their weight multiplied by -1.
+    -- Rollback to the savepoint
+    -- Update all animals' weights that are negative to be their weight multiplied by -1.
+    -- Commit transaction
+    BEGIN;
+    DELETE FROM animals WHERE date_of_birth > '2022-01-01';
+    SAVEPOINT delete_by_birth_of_date;
+    UPDATE animals SET weight_kg = weight_kg * -1;
+    ROLLBACK TO delete_by_birth_of_date;
+    UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
+    COMMIT;
