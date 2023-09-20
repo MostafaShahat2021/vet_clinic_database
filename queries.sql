@@ -82,3 +82,10 @@ FROM animals
 WHERE escape_attempts > 0
 GROUP BY neutered
 ORDER BY escape_count DESC;
+
+-- What is the minimum and maximum weight of each type of animal?
+SELECT species,
+MIN(weight_kg) as min_weight,
+MAx(weight_kg) as max_weight
+FROM animals
+GROUP BY species;
