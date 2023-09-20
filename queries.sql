@@ -50,7 +50,7 @@ BEGIN;
 DELETE FROM animals;
 ROLLBACK;
 
-Inside a transaction:
+-- Inside a transaction:
 
     -- Delete all animals born after Jan 1st, 2022.
     -- Create a savepoint for the transaction.
