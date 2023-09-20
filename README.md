@@ -73,6 +73,8 @@ This repository includes files with plain SQL that can be used to recreate a dat
 ### Key Features <a name="key-features"></a>
 
 - **[Animals Table]**
+- **[Use transactions to update and delete records.]**
+- **[Use aggregate functions and GROUP BY to answer analytical questions.]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
