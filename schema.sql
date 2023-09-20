@@ -8,3 +8,7 @@ CREATE TABLE animals (
     neutered BOOLEAN NOT NULL,
     weight_kg NUMERIC(5,2) NOT NULL
 );
+
+-- Add a column 'species' of type 'string'
+ALTER TABLE animals
+ADD COLUMN species varchar(80);
