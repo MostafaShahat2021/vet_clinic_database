@@ -22,4 +22,10 @@ CREATE TABLE owners (
 CREATE TABLE species (
     id INT GENERATED ALWAYS AS IDENTITY,
     name varchar(150)
-)
+);
+
+ALTER TABLE owners
+ADD PRIMARY KEY(id);
+
+ALTER TABLE species
+ADD PRIMARY KEY(id);
