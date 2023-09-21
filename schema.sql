@@ -29,3 +29,23 @@ ADD PRIMARY KEY(id);
 
 ALTER TABLE species
 ADD PRIMARY KEY(id);
+
+ALTER TABLE animals
+ADD PRIMARY KEY (id);
+
+ALTER TABLE animals
+DROP COLUMN IF EXISTS species;
+
+ALTER TABLE animals
+ADD COLUMN species_id INT;
+
+ALTER TABLE animals
+ADD COLUMN owner_id INT;
+
+ALTER TABLE animals
+ADD CONSTRAINT fk_species_id
+FOREIGN KEY(species_id) REFERENCES species(id);
+
+ALTER TABLE animals
+ADD CONSTRAINT fk_owner_id
+FOREIGN KEY(owner_id) REFERENCES owners(id);
